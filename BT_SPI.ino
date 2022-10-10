@@ -1,3 +1,4 @@
+//phần này em chưa demo được, em viết lý thuyết ạ
 #define SCLK 2
 #define SS 3
 #define MOSI 5
@@ -68,9 +69,9 @@ void SPI_transmit_1(uint8_t data_t){
 //chương trình nhận 1 byte
 //CHPA = 0
 void SPI_receive_0(uint8_t data_r){
-  data_r = 0x00;
+  data_r = 0x00;//chưa có dữ liệu, reset các dữ liệu trước về none
   uint8_t i = 0;
-  uint8_t tmp = 0;
+  uint8_t tmp = 0; //biến tạm chứ giá trị đọc từ chân 6, MISO
   
   for(i = 0; i<8; i++){
     data_r = data_r<<1; //dịch 1 bit 0 vào để chứa giá trị đọc 
